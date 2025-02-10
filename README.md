@@ -16,4 +16,5 @@ as most FM TOWNS Marty have failing drives or already have ODEs like DOCBROWN or
 Example code
 ============
 
-Currently, this just outputs the letter "C" on screen.
+Currently, this just makes the whole screen red.
+Resolution is 512x480 at 15bpp (32768 colors).
