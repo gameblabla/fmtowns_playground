@@ -497,7 +497,7 @@ id_done:
 
 	leal	_dl_start@GOTOFF(%ebx), %eax
 	call	*%eax
-	call	do_test
+	call	start_main
 	/* In case we return simulate an exception */
 	pushfl
 	pushl	%cs

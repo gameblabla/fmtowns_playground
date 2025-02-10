@@ -45,7 +45,6 @@ typedef unsigned long ulong;
 #define MOD_SZ		20
 #define BAILOUT		if (bail) goto skip_test;
 #define BAILR		if (bail) return;
-#define NULL 0
 
 #define DMI_SEARCH_START  0x0000F000
 #define DMI_SEARCH_LENGTH 0x000F0FFF

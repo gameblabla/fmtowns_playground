@@ -12,9 +12,9 @@ AS=as -32
 CC=gcc
 LD=ld -s
 
-CFLAGS= -Wall -march=i486 -std=gnu90 -m32 -O2 -fomit-frame-pointer -fno-builtin -ffreestanding -fPIC -fno-stack-protector -s
+CFLAGS=-Icommon -I. -Wall -march=i486 -std=gnu99 -m32 -Os -fomit-frame-pointer -fno-builtin -ffreestanding -fPIC -fno-stack-protector -s
 
-OBJS= head.o reloc.o main.o
+OBJS= head.o reloc.o main.o common/common.o common/palette.o
 
 all: mygame.bin mygame
 
