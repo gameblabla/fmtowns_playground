@@ -15,6 +15,7 @@
  */
 
 #include "defs.h"
+#include "load_limit.h"
 
 ROOT_DEV = 0
 
@@ -127,7 +128,7 @@ ok_load_setup:
 	movw	$TSTLOAD, %ax
 	movw	%ax, %ds		# segment of 0x010000
 
-	#The memtest body will be less than 192kbyte
+	#The memtest body will be less than 512kbyte
 	movw	$0x0000, %di	# address = 0, in TSTLOAD
 	movw	$0x0000, %cx	# cylinder 0
 	movw	$0x0004, %dx	# head 0 sector 4(0x0C00)
@@ -186,7 +187,7 @@ check_next_seg:
 	inc	%ah		# segment number 
 
 check_read_end:
-	cmpb	$3, %ah	/* 65536*3 */
+	cmpb    $MAX_CHUNKS, %ah
 	jle	read_loop
 	
 
